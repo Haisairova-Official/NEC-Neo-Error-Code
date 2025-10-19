@@ -13,7 +13,7 @@ It provides a unified, structured standard for error and exit codes across syste
 
 | 字段 / Field | 长度 / Length | 说明 / Description |
 |---------------|---------------|--------------------|
-| `VV` | 2位 / 2 digits | 版本号（Version）当前版本为 `01` |
+| `VV` | 2位 / 2 digits | 版本号（Version）当前版本为 `00` 当然还没正式发布。发布后会调到01的。|
 | `L` | 1位 / 1 digit | 层级（Layer）表示错误抛出层 |
 | `S` | 1位 / 1 digit | 来源（Source）表示错误来源模块 |
 | `DDDD` | 4位 / 4 digits | 定义码（Definition），由标准文档或厂商自定义 |
@@ -87,7 +87,7 @@ It provides a unified, structured standard for error and exit codes across syste
 | 项目 | 内容 |
 |------|------|
 | 标准名称 | Neo Exit Code (NEC) |
-| 当前版本 | 1.0.0 |
+| 当前版本 | 0.0.0.25101923 |
 | 文件版本 | v01 |
 | 作者 / Author | https://github.com/Haisairova-Official |
 | 许可证 / License | MIT |
