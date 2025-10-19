@@ -31,7 +31,7 @@ It provides a unified, structured standard for error and exit codes across syste
 | 4 | 应用层 / User-Level Application |
 | 5 | 低权限脚本 / Low-Privilege Script or Plugin |
 | 6 | 无响应 / Hung or Non-responsive Process |
-| 9 | 未知层级 / Unknown Layer |
+| F | 未知 / Unknown |
 
 ---
 
@@ -48,7 +48,7 @@ It provides a unified, structured standard for error and exit codes across syste
 | 6 | 系统调用 / System Call |
 | 7 | 外部依赖 / External Dependency |
 | 8 | 环境变量或配置 / Environment / Config |
-| 9 | 未知来源 / Unknown Source |
+| F | 未知来源 / Unknown Source |
 
 ---
 
@@ -58,7 +58,7 @@ It provides a unified, structured standard for error and exit codes across syste
 0x01260020
 ```
 
-- **VV** = `01` → 版本 1 / Version 1  
+- **VV** = `01` → 版本号01 / Version Code 01  
 - **L** = `2` → 守护进程 / Daemon Layer  
 - **S** = `6` → 系统调用 / System Call  
 - **DDDD** = `0020` → 定义为 “主线程意外退出导致程序失败”  
@@ -69,7 +69,7 @@ It provides a unified, structured standard for error and exit codes across syste
 ## 🧩 扩展性 / Extensibility
 
 - 版本号可向后兼容。
-- 预留 `F*` 范围用于厂商自定义命名空间。
+- 预留 `DDDD` 大量范围可用于厂商自定义命名空间。
 - 可通过 JSON Schema 注册自定义错误定义。
 
 ---
