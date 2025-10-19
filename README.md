@@ -86,21 +86,23 @@ It provides a unified, structured standard for error and exit codes across syste
 ## 📘 示例 / Example
 
 ```
-0x01260020
+0x01462320
 ```
 
-- **VV** = `01` → 版本号01 / Version Code 01  
-- **L** = `2` → 守护进程 / Daemon Layer  
+- **VV** = `01` → 版本号01 / Version 1  
+- **L** = `4` → 应用层 / Application Layer  
 - **S** = `6` → 系统调用 / System Call  
-- **DDDD** = `0020` → 定义为 “主线程意外退出导致程序失败”  
-- **含义 / Meaning**：在 v1 规范中，守护进程在系统调用阶段因主线程异常退出而失败。
+- **CC** = `23` → 类型为 Crash，等级为 Critical  
+- **DD** = `20` → 定义为“主线程意外退出导致程序失败”  
+
+**含义 / Meaning**：应用层在系统调用阶段因主线程崩溃（Critical Crash）而失败。
 
 ---
 
 ## 🧩 扩展性 / Extensibility
 
 - 版本号可向后兼容。
-- 预留 `DDDD` 大量范围可用于厂商自定义命名空间。
+- 预留 `CCDD` 范围供厂商定义。
 - 可通过 JSON Schema 注册自定义错误定义。
 
 ---
