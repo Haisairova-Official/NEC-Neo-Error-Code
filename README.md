@@ -16,10 +16,11 @@ It provides a unified, structured standard for error and exit codes across syste
 
 | 字段 / Field | 长度 / Length | 说明 / Description |
 |---------------|---------------|--------------------|
-| `VV` | 2位 / 2 digits | 版本号（Version）当前版本为 `00` 当然还没正式发布。发布后会调到01的。|
+| `VV` | 2位 / 2 digits | 版本号（Version）当前版本为 `00`（正式发布后为 `01`） |
 | `L` | 1位 / 1 digit | 层级（Layer）表示错误抛出层 |
 | `S` | 1位 / 1 digit | 来源（Source）表示错误来源模块 |
-| `DDDD` | 4位 / 4 digits | 定义码（Definition），由标准文档或厂商自定义 |
+| `CC` | 2位 / 2 digits | 错误类型与等级（Category & Severity） |
+| `DD` | 2位 / 2 digits | 定义码（Definition），由标准或厂商自定义 |
 
 ---
 
@@ -33,7 +34,7 @@ It provides a unified, structured standard for error and exit codes across syste
 | 3 | 外部高权限程序 / External High-Privilege Process |
 | 4 | 应用层 / User-Level Application |
 | 5 | 低权限脚本 / Low-Privilege Script or Plugin |
-| 6 | 无响应 / Hung or Non-responsive Process |
+| 6 | 硬件故障 / Hardware Failure |
 | F | 未知 / Unknown |
 
 ---
@@ -52,6 +53,33 @@ It provides a unified, structured standard for error and exit codes across syste
 | 7 | 外部依赖 / External Dependency |
 | 8 | 环境变量或配置 / Environment / Config |
 | F | 未知来源 / Unknown Source |
+
+---
+
+## ⚠️ 错误类型与等级定义 / Category & Severity Definitions
+
+错误类型（前1位） / Error Category (first digit):
+
+| 值 / Value | 类型 / Type | 说明 / Description |
+|-------------|-------------|--------------------|
+| 0 | Exit | 程序主动退出（正常/异常） |
+| 1 | Hang | 程序无响应或阻塞 |
+| 2 | Lockdown | 系统或安全策略强制终止 |
+| 3 | Fault | 常规运行时错误 |
+| 4 | Crash | 程序或进程崩溃 |
+| 5 | Recover | 自动恢复事件 |
+| F | Unknown | 未定义类型 |
+
+错误等级（后1位） / Severity Level (second digit):
+
+| 值 / Value | 等级 / Level | 说明 / Description |
+|-------------|--------------|--------------------|
+| 0 | Info | 信息，仅记录 |
+| 1 | Warning | 警告，可恢复 |
+| 2 | Error | 错误，需要处理 |
+| 3 | Critical | 严重错误，程序终止 |
+| F | Unknown | 未知等级 |
+
 
 ---
 
@@ -90,7 +118,7 @@ It provides a unified, structured standard for error and exit codes across syste
 | 项目 | 内容 |
 |------|------|
 | 标准名称 | Neo Exit Code (NEC) |
-| 当前版本 | 0.0.1.25101923 |
+| 当前版本 | 0.0.1.251002 |
 | 文件版本 | v01 |
 | 作者 / Author | https://github.com/Haisairova-Official |
 | 许可证 / License | MIT |
