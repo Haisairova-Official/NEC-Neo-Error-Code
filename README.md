@@ -89,7 +89,7 @@ It provides a unified, structured standard for error and exit codes across syste
 | 标准名称 | Neo Exit Code (NEC) |
 | 当前版本 | 1.0.0 |
 | 文件版本 | v01 |
-| 作者 / Author | 南云秋月 (Aduki) |
+| 作者 / Author | https://github.com/Haisairova-Official |
 | 许可证 / License | MIT |
 | 仓库地址 / Repository | https://github.com/Haisairova-Official/NEC-Neo-Error-Code |
 
