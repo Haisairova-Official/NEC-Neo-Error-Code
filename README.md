@@ -4,6 +4,9 @@
 **Neo Exit Code（NEC）** 是一种统一的错误与退出码标准，旨在为系统、守护进程、驱动及应用层程序提供一致且可扩展的错误编码体系。  
 It provides a unified, structured standard for error and exit codes across systems, daemons, drivers, and applications.
 
+![Version](https://img.shields.io/badge/Version-0.0.1-red.svg)  
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 ---
 
 ## 🧱 格式 / Format
@@ -87,7 +90,7 @@ It provides a unified, structured standard for error and exit codes across syste
 | 项目 | 内容 |
 |------|------|
 | 标准名称 | Neo Exit Code (NEC) |
-| 当前版本 | 0.0.0.25101923 |
+| 当前版本 | 0.0.1.25101923 |
 | 文件版本 | v01 |
 | 作者 / Author | https://github.com/Haisairova-Official |
 | 许可证 / License | MIT |
